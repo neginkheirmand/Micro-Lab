@@ -15,8 +15,8 @@ void setup() {
   pinMode(interruptPin1, INPUT_PULLUP);
   pinMode(interruptPin2, INPUT_PULLUP);
   
-  attachInterrupt(digitalPinToInterrupt(interruptPin1), spellMyName, FALLING);// when an interrupt is received for pin d2 the lights will turn on
-//  attachInterrupt(digitalPinToInterrupt(interruptPin1), turnOn, FALLING);// when an interrupt is received for pin d2 the lights will turn on
+//  attachInterrupt(digitalPinToInterrupt(interruptPin1), spellMyName, FALLING);// when an interrupt is received for pin d2 the lights will turn on
+  attachInterrupt(digitalPinToInterrupt(interruptPin1), turnOn, FALLING);// when an interrupt is received for pin d2 the lights will turn on
   attachInterrupt(digitalPinToInterrupt(interruptPin2), turnOff, FALLING);// when an interrupt is received for pin d2 the lights will turn off
 
   digitalWrite(ledPin1, LOW);
