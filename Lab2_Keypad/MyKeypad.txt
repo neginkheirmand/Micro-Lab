@@ -1,0 +1,65 @@
+my key pad is a 4*4 keypad therefore has 4+4=8 pins:
+pin1 : R1 -> arduino pin d9
+pin2 : R2 -> arduino pin d8
+pin3 : R3 -> arduino pin d7
+pin4 : R4 -> arduino pin d6
+pin5 : C1 -> arduino pin d5
+pin6 : C2 -> arduino pin d4
+pin7 : C3 -> arduino pin d3
+pin8 : C4 -> arduino pin d2
+
+
+----------------------------------------------------
+to test the keypad run the sketch_test and check the keys, if the the
+arduino terminal prints the key pressed then the keypad pinouts and
+the connections are as the ones specified above:
+warning 1: my keypad looks like this:
+
+  {'0','1','2','3'},
+  {'4','5','6','7'},
+  {'8','9','A','B'},
+  {'C','D','E','F'}
+so change the code according if yours its not like this
+warning 2: code will only handle one key pressed at a time.
+----------------------------------------------------
+In the first part of this lab the arduino is supposed to turn on LEDs
+according to the number pressed in the keypad, if 1 is pressed 1 LED 
+would turn on, if 2 ... and so on.
+but since i have only 4 digital pins left to use (8 already used for 
+keypad) my program will only support 4 LED and therefore when u press
+1 to 4 keys leds will turn on accordingly and if any other number is 
+pressed the output is written in the arduino terminal
+
+pinout for this part of the lab:
+the keypad is configured as specified above
+the LEDs:
+
+ledPin1 -> D13
+ledPin2 -> D12
+ledPin3 -> D11
+ledPin4 -> D10
+
+------------------------------------------
+the second part of the lab is basically the test sketch which outputs 
+the key pressed
+------------------------------------------
+
+--------------------------------------------------------
+The last part of the lab is to create a number panel to display 
+the number pressed after using the keypad:
+for example if you press(in order):
+first press 1 then 2 and at last 3 the number shown in the terminal
+would be 123 and them check is more than 9 and then output :
+invalid number!
+in the terminal
+the code for this oart is in sketch_pt3_showNum directory
+but there is a bug, even tho the number is defined as long, 
+if you press these numbers in order:
+12345678987
+you would get the output:
+-539222901
+which is clearly wrong this is because the number 12345678987 does not fit 
+inside the space of a long variable type, to solve this we could use strings and 
+append the input at the end but since it is specified in the lab desc
+i will leave this code be and create a new sketch for the debuged version, 
+refer to sketch_pt3_debugedVersion for the string version of the code
