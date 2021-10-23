@@ -8,8 +8,8 @@ char keys[ROWS][COLS] = {
   {'8','9','A','B'},
   {'C','D','E','F'}
 };
-byte rowPins[ROWS] = {9, 8, 7, 6}; //connect to the row pinouts of the keypad
-byte colPins[COLS] = {5, 4, 3, 2}; //connect to the column pinouts of the keypad
+byte rowPins[ROWS] = {A3, A2, 13, 12}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {11, 10, 9, 8}; //connect to the column pinouts of the keypad
 long number = 0;
 
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
@@ -33,7 +33,7 @@ void loop(){
         Serial.println(String("number: "+String(number)));        
       }
     }
-    else if(key='C'){//the C is the delete key
+    else if(key=='C'){//the C is the delete key
       number = 0;
       Serial.println("pressed the delete key, now the number is 0");      
     }
