@@ -17,6 +17,11 @@ void setup() {
   for (byte i = 1; i <=4 ; i++) {
     writeI2CByte(i+6, i);
   }
+
+  //just for the machine to work properly the values for the indexOfWork and default will also be set properly
+  writeI2CByte(17, 0);//indexOfWork
+  readI2CByte(18, 1);//flagDefault
+
   
   for (byte i = 0; i <= 20; i++) {
     byte b = readI2CByte(i);
@@ -26,10 +31,6 @@ void setup() {
     a = a + String(b);
     Serial.println(a);
   }
-
-  //just for the machine to work properly the values for the indexOfWork and default will also be set properly
-  writeI2CByte(17, 0);//indexOfWork
-  readI2CByte(18, 1);//flagDefault
 }
 
 void loop() {
