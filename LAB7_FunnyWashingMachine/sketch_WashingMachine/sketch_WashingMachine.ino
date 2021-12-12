@@ -368,6 +368,7 @@ void loop() {
       }
       saveArr(arrInput, customSize);
       printLCD("saved the custom setting");
+      input="";
       delay(1000);
       changeState_mode(0, -1);
     }else if(key=='C'){
