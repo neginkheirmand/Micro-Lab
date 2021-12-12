@@ -18,9 +18,13 @@ void setup() {
     writeI2CByte(i+6, i);
   }
 
+  //the state and the mode will be set to starting point
+  writeI2CByte(15, 0);//state = idle
+  writeI2CByte(16, 6);//mode = not working 
+
   //just for the machine to work properly the values for the indexOfWork and default will also be set properly
   writeI2CByte(17, 0);//indexOfWork
-  readI2CByte(18, 1);//flagDefault
+  writeI2CByte(18, 1);//flagDefault
 
   
   for (byte i = 0; i <= 20; i++) {
