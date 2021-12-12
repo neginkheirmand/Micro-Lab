@@ -26,7 +26,10 @@ void setup() {
     a = a + String(b);
     Serial.println(a);
   }
-  
+
+  //just for the machine to work properly the values for the indexOfWork and default will also be set properly
+  writeI2CByte(17, 0);//indexOfWork
+  readI2CByte(18, 1);//flagDefault
 }
 
 void loop() {
