@@ -1,5 +1,5 @@
 /*
- This sketch is a simple calculator(supports only one operator or less)
+ This sketch is a not so simple washing machine brain
 
   The LCD circuit:
  
@@ -21,6 +21,8 @@
  * LCD pin 16(Cathode) to 5v
 */
 
+//WARNING:   THE WASHING MACHINE CAN SUPPORT CUSTOM CONFIGURATIONS UP TO 8 UNITS(phases)
+//DO NOT ENTER MORE THAN 8, IF YOU DO YOU WILL HAVE TO RESET IT ALL BY RUNNING THE MEMMORY SETTER 
 
 // The washing machine will have two modes, the default mode witch is 1->2->3->4 and then a custome which can be defined by the user
 #include <Wire.h>
